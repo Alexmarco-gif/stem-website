@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Database, Search, Cpu, Bell, ArrowRight } from "lucide-react";
+import { Database, Search, Cpu, Bell, ArrowRight, SlidersHorizontal } from "lucide-react";
 
 const steps = [
   {
@@ -24,6 +24,12 @@ const steps = [
     description: "Signals are grouped and interpreted so teams can understand what changed and why it matters.",
   },
   {
+    id: "prioritize",
+    title: "Prioritize",
+    icon: SlidersHorizontal,
+    description: "Important shifts are surfaced above background noise so your team focuses on what demands attention.",
+  },
+  {
     id: "deliver",
     title: "Deliver",
     icon: Bell,
@@ -42,7 +48,7 @@ export function Engine() {
   }, []);
 
   return (
-    <section className="py-24 bg-background overflow-hidden">
+    <section id="how-it-works" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="flex-1 max-w-xl">

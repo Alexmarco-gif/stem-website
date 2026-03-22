@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function FinalCTA() {
   return (
@@ -26,13 +27,17 @@ export function FinalCTA() {
               Tell us what your team is trying to track, assess, or decide. We’ll show you how Stem could fit your decision workflow.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button size="lg" variant="secondary" className="rounded-full shadow-lg h-16 px-10 text-xl">
-                Request a Scoping Call
-                <ArrowRight className="ml-3 w-6 h-6" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full border-white text-white hover:bg-white/10 h-16 px-10 text-xl">
-                See How It Works
-              </Button>
+              <Link href="/request-a-scoping-call">
+                <Button size="lg" variant="secondary" className="rounded-full shadow-lg h-16 px-10 text-xl">
+                  Request a Scoping Call
+                  <ArrowRight className="ml-3 w-6 h-6" />
+                </Button>
+              </Link>
+              <Link href="/platform">
+                <Button size="lg" variant="outline" className="rounded-full border-white text-white hover:bg-white/10 h-16 px-10 text-xl">
+                  See How It Works
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

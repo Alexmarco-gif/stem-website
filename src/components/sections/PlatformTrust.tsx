@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Link2, Search, History } from "lucide-react";
+import { Link2, Search, History, ShieldCheck } from "lucide-react";
 
 const trustPillars = [
   {

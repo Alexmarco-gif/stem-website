@@ -3,8 +3,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function Hero() {
+  const scrollToEngine = () => {
+    const el = document.getElementById("how-it-works");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background">
       {/* Background Signal Animation (Conceptual) */}
@@ -65,11 +71,13 @@ export function Hero() {
               Stem helps fintech and financial-services teams in Nigeria detect meaningful market changes early and act with more confidence, less guesswork, and less manual research.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-full shadow-xl shadow-primary/30">
-                Request a Scoping Call
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="lg" variant="secondary" className="rounded-full">
+              <Link href="/request-a-scoping-call">
+                <Button size="lg" className="rounded-full shadow-xl shadow-primary/30">
+                  Request a Scoping Call
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Button size="lg" variant="secondary" className="rounded-full" onClick={scrollToEngine}>
                 See How It Works
               </Button>
             </div>

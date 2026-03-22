@@ -1,7 +1,9 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { UseCaseHero } from "@/components/sections/UseCaseHero";
+import { UseCaseIndex } from "@/components/sections/UseCaseIndex";
 import { UseCaseList } from "@/components/sections/UseCaseList";
+import { UseCaseSummary } from "@/components/sections/UseCaseSummary";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export const metadata = {
@@ -14,7 +16,9 @@ export default function UseCasesPage() {
     <main className="min-h-screen">
       <Header />
       <UseCaseHero />
+      <UseCaseIndex />
       <UseCaseList />
+      <UseCaseSummary />
       <FinalCTA />
       <Footer />
     </main>

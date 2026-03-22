@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SolutionsHero } from "@/components/sections/SolutionsHero";
 import { SolutionsProblem } from "@/components/sections/SolutionsProblem";
 import { SolutionsPillars } from "@/components/sections/SolutionsPillars";
+import { SolutionsOutcomes } from "@/components/sections/SolutionsOutcomes";
 import { SolutionsRoles } from "@/components/sections/SolutionsRoles";
 import { SolutionsWhyNow } from "@/components/sections/SolutionsWhyNow";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -19,6 +20,7 @@ export default function SolutionsPage() {
       <SolutionsHero />
       <SolutionsProblem />
       <SolutionsPillars />
+      <SolutionsOutcomes />
       <SolutionsRoles />
       <SolutionsWhyNow />
       <FinalCTA />

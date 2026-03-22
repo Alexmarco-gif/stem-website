@@ -64,9 +64,11 @@ export function Header() {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Button size="sm" className="rounded-full shadow-lg shadow-primary/20">
-              Request a Scoping Call
-            </Button>
+            <Link href="/request-a-scoping-call">
+              <Button size="sm" className="rounded-full shadow-lg shadow-primary/20">
+                Request a Scoping Call
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Trigger */}
@@ -100,7 +102,9 @@ export function Header() {
               {item.name}
             </Link>
           ))}
-          <Button className="w-full mt-4">Request a Scoping Call</Button>
+          <Link href="/request-a-scoping-call" onClick={() => setIsOpen(false)}>
+            <Button className="w-full mt-4">Request a Scoping Call</Button>
+          </Link>
         </div>
       </div>
     </header>

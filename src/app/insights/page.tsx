@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { InsightsHero } from "@/components/sections/InsightsHero";
 import { InsightsFeatured } from "@/components/sections/InsightsFeatured";
 import { InsightsGrid } from "@/components/sections/InsightsGrid";
+import { InsightsCTA } from "@/components/sections/InsightsCTA";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function InsightsPage() {
       <InsightsHero />
       <InsightsFeatured />
       <InsightsGrid />
+      <InsightsCTA />
       <FinalCTA />
       <Footer />
     </main>

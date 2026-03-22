@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function UseCaseHero() {
   return (
@@ -23,10 +24,12 @@ export function UseCaseHero() {
             <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl leading-relaxed">
                Stem helps teams monitor competitor movement, market shifts, policy changes, and expansion signals so they can make better calls faster.
             </p>
-            <Button size="lg" className="rounded-full shadow-xl shadow-primary/30 h-14 px-8">
-               Request a Scoping Call
-               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link href="/request-a-scoping-call">
+              <Button size="lg" className="rounded-full shadow-xl shadow-primary/30 h-14 px-8">
+                 Request a Scoping Call
+                 <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

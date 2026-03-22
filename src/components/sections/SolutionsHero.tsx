@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function SolutionsHero() {
   return (
@@ -23,11 +24,18 @@ export function SolutionsHero() {
           <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Stem helps strategy, growth, and leadership teams reduce blind spots, improve timing, and make better market decisions with less manual research.
           </p>
-          <div className="flex justify-center">
-            <Button size="lg" className="rounded-full shadow-xl shadow-primary/30 h-14 px-8">
-              Request a Scoping Call
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/request-a-scoping-call">
+              <Button size="lg" className="rounded-full shadow-xl shadow-primary/30 h-14 px-8">
+                Request a Scoping Call
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="/platform">
+              <Button size="lg" variant="secondary" className="rounded-full h-14 px-8">
+                See Platform
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
