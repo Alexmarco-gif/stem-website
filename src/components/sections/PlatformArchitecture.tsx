@@ -73,7 +73,7 @@ export function PlatformArchitecture() {
               className="p-8 rounded-[28px] bg-background border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-primary/8 transition-shadow duration-300 group cursor-default"
             >
               {/* Gradient accent background on hover */}
-              <div className={`absolute inset-0 rounded-[28px] bg-gradient-to-br ${theme.color} opacity-0 group-hover:opacity-60 transition-opacity duration-400 pointer-events-none`} />
+              <div className={`absolute inset-0 rounded-[28px] bg-gradient-to-br ${theme.color} opacity-0 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`} />
 
               <div className="relative z-10">
                 <motion.div

@@ -41,7 +41,6 @@ export function PlatformHero() {
 
         {/* Conceptual UI / Platform Visualization */}
         <motion.div
-          initial={{ }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="mt-20 relative max-w-5xl mx-auto"
