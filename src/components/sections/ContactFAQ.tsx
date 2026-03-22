@@ -34,9 +34,9 @@ export function ContactFAQ() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.7 }}
           className="mb-12"
         >
@@ -50,14 +50,18 @@ export function ContactFAQ() {
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+              className={`bg-white rounded-2xl border overflow-hidden shadow-sm transition-all duration-300 ${
+                openIndex === i
+                  ? "border-primary/30 shadow-lg shadow-primary/8"
+                  : "border-gray-100"
+              }`}
             >
               <button
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50/80 transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 aria-expanded={openIndex === i}
               >
@@ -67,7 +71,7 @@ export function ContactFAQ() {
                   transition={{ duration: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  <ChevronDown className="w-5 h-5 text-gray-400" />
+                  <ChevronDown className={`w-5 h-5 transition-colors ${openIndex === i ? "text-primary" : "text-gray-400"}`} />
                 </motion.div>
               </button>
 

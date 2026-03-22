@@ -39,22 +39,28 @@ export function Stakes() {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mb-16">
+        <motion.div
+          initial={{ y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
             The cost of a blind spot is rarely visible until it is expensive.
           </h2>
           <p className="text-xl text-gray-600">
             In fast-moving financial markets, missed signals do not stay small for long. Delayed visibility can turn into weak recommendations, poor timing, missed opportunities, or preventable exposure.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stakes.map((stake, i) => (
             <motion.div
               key={stake.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >

@@ -53,9 +53,9 @@ export function Benefits() {
           {benefits.map((benefit, i) => (
             <motion.div
               key={benefit.title}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="p-8 rounded-2xl bg-background border border-gray-100 hover:border-primary/20 transition-all duration-300"
             >

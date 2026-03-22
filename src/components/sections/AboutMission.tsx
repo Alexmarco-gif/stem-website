@@ -8,9 +8,9 @@ export function AboutMission() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-ink mb-8 leading-tight">
@@ -30,9 +30,9 @@ export function AboutMission() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8 }}
             className="relative p-12 bg-background rounded-[40px] border border-gray-100"
           >

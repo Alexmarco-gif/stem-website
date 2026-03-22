@@ -38,9 +38,9 @@ export function PlatformTrust() {
               {trustPillars.map((pillar, i) => (
                 <motion.div
                   key={pillar.title}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex gap-6 items-start"
                 >
@@ -59,9 +59,9 @@ export function PlatformTrust() {
           <div className="relative">
             {/* Annotated Signal Panel Mockup */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8 }}
               className="relative z-10 p-8 rounded-3xl bg-background border border-gray-100 shadow-2xl"
             >

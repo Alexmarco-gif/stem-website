@@ -9,9 +9,9 @@ export function InsightsFeatured() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
+          initial={{ scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
           className="p-12 md:p-20 rounded-[40px] bg-ink text-white overflow-hidden relative"
         >

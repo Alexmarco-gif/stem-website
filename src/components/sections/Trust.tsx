@@ -30,38 +30,49 @@ export function Trust() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mb-16">
+        <motion.div
+          initial={{ y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
             Intelligence is only useful if teams trust it.
           </h2>
           <p className="text-xl text-gray-600">
             Stem is engineered for precision, transparency, and regional relevance.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-primary/8 transition-shadow duration-300 group cursor-default"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
+              <motion.div
+                whileHover={{ scale: 1.15, rotate: 8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 12 }}
+                className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6"
+              >
                 <pillar.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-ink mb-3">{pillar.title}</h3>
+              </motion.div>
+              <h3 className="text-xl font-bold text-ink mb-3 group-hover:text-primary transition-colors">{pillar.title}</h3>
               <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-20 p-12 rounded-3xl bg-white border border-gray-100 flex flex-col md:flex-row items-center gap-12"
         >

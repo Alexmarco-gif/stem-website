@@ -14,9 +14,9 @@ export function FinalCTA() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
             className="p-12 md:p-20 rounded-[40px] bg-primary text-white shadow-2xl shadow-primary/20"
           >

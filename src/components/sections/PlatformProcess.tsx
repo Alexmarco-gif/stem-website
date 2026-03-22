@@ -52,9 +52,9 @@ export function PlatformProcess() {
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex flex-col items-center lg:items-start text-center lg:text-left"
               >

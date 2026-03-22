@@ -47,9 +47,9 @@ export function PlatformOutputs() {
                {outputs.map((out, i) => (
                   <motion.div 
                     key={out.title}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     className="flex gap-4 items-start"
                   >

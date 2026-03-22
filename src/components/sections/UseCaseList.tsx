@@ -59,7 +59,7 @@ export function UseCaseList() {
             <motion.div
               key={uc.id}
               id={uc.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
@@ -108,9 +108,9 @@ export function UseCaseList() {
                        {uc.outputs.map((output, idx) => (
                          <motion.div
                            key={idx}
-                           initial={{ opacity: 0, x: 20 }}
+                           initial={{ x: 20 }}
                            whileInView={{ opacity: 1, x: 0 }}
-                           viewport={{ once: true }}
+                           viewport={{ once: true, amount: 0.1 }}
                            transition={{ delay: 0.2 + idx * 0.1 }}
                            className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100 group-hover:bg-blue-50/50 transition-colors"
                          >

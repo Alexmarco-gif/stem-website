@@ -38,9 +38,9 @@ export function InsightsGrid() {
            {articles.map((art, i) => (
               <motion.div
                 key={art.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="group bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
               >
