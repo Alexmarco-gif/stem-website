@@ -35,7 +35,9 @@ export function Footer() {
             <p className="text-gray-400 text-lg max-w-sm mb-8">
               Stem helps strategy and growth teams turn fragmented external signals into decision-ready intelligence.
             </p>
-            <Button size="sm" className="rounded-full">Request a Scoping Call</Button>
+            <Link href="/request-a-scoping-call">
+              <Button size="sm" className="rounded-full">Request a Scoping Call</Button>
+            </Link>
           </div>
 
           <div>
