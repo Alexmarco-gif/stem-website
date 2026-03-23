@@ -2,31 +2,42 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, MapPin, Layers, LayoutDashboard } from "lucide-react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const pillars = [
   {
-    title: "Regional market realism",
-    description: "Built specifically for the unique dynamics and fragmentation of the Nigerian financial landscape.",
+    title: "12+ Fintech Strategy Leaders Consulted",
+    description:
+      "Designed with input from senior operators who understand the real gaps in Nigerian fintech strategy workflows.",
     icon: MapPin,
+    stat: "12+",
   },
   {
-    title: "Source lineage & context",
-    description: "Every signal is traceable back to its origin, providing the context teams need to trust the output.",
+    title: "Signal Lineage & Source Traceability",
+    description:
+      "Every signal is traceable back to its origin, providing the context teams need to trust the output.",
     icon: Layers,
+    stat: "100%",
   },
   {
-    title: "Built for strategic teams",
-    description: "Designed for those who make the calls, not just those who monitor the data feeds.",
+    title: "Built for Nigerian Financial Markets",
+    description:
+      "Built specifically for the unique dynamics and fragmentation of the Nigerian financial landscape.",
     icon: ShieldCheck,
+    stat: "NG",
   },
   {
-    title: "Decision-ready outputs",
-    description: "Prioritized alerts and intelligence summaries over cluttered dashboards and raw data dumps.",
+    title: "Decision-Ready Intelligence",
+    description:
+      "Prioritized alerts and intelligence summaries over cluttered dashboards and raw data dumps.",
     icon: LayoutDashboard,
+    stat: "✓",
   },
 ];
 
 export function Trust() {
+  const reduced = useReducedMotion();
+
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -43,47 +54,67 @@ export function Trust() {
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              whileInView={reduced ? {} : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={reduced ? { duration: 0 } : { duration: 0.5, delay: i * 0.1 }}
               className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
                 <pillar.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-ink mb-3">{pillar.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
+              <div className="text-3xl font-bold text-primary mb-3">
+                {pillar.stat}
+              </div>
+              <h3 className="text-base font-bold text-ink mb-3 leading-snug">
+                {pillar.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-sm">
+                {pillar.description}
+              </p>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          whileInView={reduced ? {} : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={reduced ? { duration: 0 } : { duration: 0.8, delay: 0.4 }}
           className="mt-20 p-12 rounded-3xl bg-white border border-gray-100 flex flex-col md:flex-row items-center gap-12"
         >
           <div className="flex-1">
-             <h3 className="text-2xl font-bold text-ink mb-4">“Built for the next generation of Nigerian finance”</h3>
-             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-               Stem represents a shift from reactive monitoring to proactive market intelligence, designed specifically for the needs of serious operators.
-             </p>
-             <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200" />
-                <div>
-                  <p className="font-bold text-ink text-sm">Founding Perspective</p>
-                  <p className="text-gray-500 text-xs">Market Credibility Statement</p>
-                </div>
-             </div>
+            <h3 className="text-2xl font-bold text-ink mb-4">
+              &ldquo;Stem represents how the next generation of Nigerian finance teams
+              will operate — with structured intelligence, not gut feel.&rdquo;
+            </h3>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              The gap between reactive monitoring and proactive market intelligence is
+              where competitive advantage is built. Stem exists to close that gap for
+              serious operators in fast-moving markets.
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-primary font-bold text-lg">S</span>
+              </div>
+              <div>
+                <p className="font-bold text-ink text-sm">Stem-Cogent Team</p>
+                <p className="text-gray-500 text-xs">Built for Nigerian Financial Markets</p>
+              </div>
+            </div>
           </div>
-          <div className="flex-shrink-0 grid grid-cols-2 gap-8 grayscale opacity-40">
-             {/* Logo placeholders for future trust proof */}
-             <div className="w-32 h-8 bg-gray-300 rounded" />
-             <div className="w-32 h-8 bg-gray-300 rounded" />
-             <div className="w-32 h-8 bg-gray-300 rounded" />
-             <div className="w-32 h-8 bg-gray-300 rounded" />
+
+          <div className="flex-shrink-0 grid grid-cols-2 gap-6">
+            {["Fintech-Native", "Signal Lineage", "Decision-Ready", "Nigerian Markets"].map(
+              (badge) => (
+                <div
+                  key={badge}
+                  className="px-4 py-3 rounded-xl bg-blue-50 border border-blue-100 text-center"
+                >
+                  <p className="text-xs font-bold text-primary">{badge}</p>
+                </div>
+              )
+            )}
           </div>
         </motion.div>
       </div>

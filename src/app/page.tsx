@@ -1,6 +1,8 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { Hero } from "@/components/sections/Hero";
+import { SocialProof } from "@/components/sections/SocialProof";
 import { Stakes } from "@/components/sections/Stakes";
 import { Engine } from "@/components/sections/Engine";
 import { Benefits } from "@/components/sections/Benefits";
@@ -14,6 +16,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <SocialProof />
       <Stakes />
       <Engine />
       <Benefits />
@@ -22,6 +25,7 @@ export default function Home() {
       <Trust />
       <FinalCTA />
       <Footer />
+      <StickyMobileCTA />
     </main>
   );
 }
