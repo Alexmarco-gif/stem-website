@@ -1,5 +1,26 @@
 # Stem
 
+## Getting Started
+
+First, install the project dependencies:
+
+```bash
+npm install
+```
+
+Then run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the site.
+
+> **Note:** Always run `npm install` before `npm run dev` — especially after a fresh clone.  
+> If you see `'next' is not recognized`, it means `node_modules` is missing and you need to run `npm install` first.
+
+---
+
 Stem is a decision intelligence platform built for fintech and financial-services teams in Nigeria. It helps teams detect meaningful market changes early and turn scattered signals into clear, actionable intelligence — so decisions get made with confidence, not guesswork.
 
 ## The Problem
