@@ -42,11 +42,14 @@ export function Trust() {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mb-16">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Why teams trust Stem
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
-            Intelligence is only useful if teams trust it.
+            Intelligence is only useful if you can trust it.
           </h2>
           <p className="text-xl text-gray-600">
-            Stem is engineered for precision, transparency, and regional relevance.
+            Stem is engineered for precision, transparency, and regional relevance — so every output your team acts on is backed by evidence you can trace.
           </p>
         </div>
 
@@ -85,20 +88,23 @@ export function Trust() {
         >
           <div className="flex-1">
             <h3 className="text-2xl font-bold text-ink mb-4">
-              &ldquo;Stem represents how the next generation of Nigerian finance teams
-              will operate — with structured intelligence, not gut feel.&rdquo;
+              &ldquo;Strategy teams in Nigeria&apos;s financial sector operate in one of
+              the world&apos;s most dynamic and fast-moving markets. The tools they
+              use for intelligence need to match that pace. Stem is built
+              specifically for that reality.&rdquo;
             </h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              The gap between reactive monitoring and proactive market intelligence is
-              where competitive advantage is built. Stem exists to close that gap for
-              serious operators in fast-moving markets.
+              A platform that synthesises competitor moves, market signals, and
+              regulatory shifts — and delivers them as decision-ready
+              intelligence — is exactly what the next generation of Nigerian
+              fintech operators needs.
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <span className="text-primary font-bold text-lg">S</span>
               </div>
               <div>
-                <p className="font-bold text-ink text-sm">Stem-Cogent Team</p>
+                <p className="font-bold text-ink text-sm">Stem-Cogent Founding Team</p>
                 <p className="text-gray-500 text-xs">Built for Nigerian Financial Markets</p>
               </div>
             </div>

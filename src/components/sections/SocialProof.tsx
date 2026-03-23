@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Users, TrendingUp, Globe } from "lucide-react";
+import { ShieldCheck, Users, TrendingUp, Globe, Quote } from "lucide-react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const badges = [
@@ -27,8 +27,38 @@ export function SocialProof() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="py-10 bg-white border-y border-gray-100">
+    <section className="py-16 bg-white border-y border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
+        {/* Testimonial quote */}
+        <motion.div
+          initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          whileInView={reduced ? {} : { opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={reduced ? { duration: 0 } : { duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-12"
+        >
+          <div className="flex justify-center mb-4">
+            <Quote className="w-8 h-8 text-primary/30" />
+          </div>
+          <p className="text-xl md:text-2xl font-medium text-ink leading-relaxed mb-6">
+            &ldquo;The intelligence gap in Nigerian fintech is real — and costly. A
+            platform that brings market, competitor, and policy signals into a
+            single decision layer would change how strategy teams operate
+            entirely.&rdquo;
+          </p>
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <span className="text-primary font-bold text-sm">F</span>
+            </div>
+            <div className="text-left">
+              <p className="text-sm font-bold text-ink">Fintech Strategy Leader</p>
+              <p className="text-xs text-gray-500">
+                Senior Strategy Consultant, Nigerian Financial Services
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         <motion.div
           initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           whileInView={reduced ? {} : { opacity: 1, y: 0 }}

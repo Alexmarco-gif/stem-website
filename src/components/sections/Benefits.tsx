@@ -7,39 +7,39 @@ import { staggerContainer, noMotion } from "@/lib/animation-variants";
 
 const benefits = [
   {
-    title: "Detect meaningful changes earlier",
+    title: "You spot moves before they become common knowledge",
     description:
-      "Identify competitor moves and market shifts before they become common knowledge.",
+      "Competitor launches, pricing changes, and positioning shifts reach you early — while there is still time to respond.",
     icon: Search,
   },
   {
-    title: "Reduce manual monitoring load",
+    title: "Your team reclaims hours lost to manual research",
     description:
-      "Automate the heavy lifting of tracking fragmented external signals and sources.",
+      "The heavy lifting of monitoring fragmented external sources is automated — so your team focuses on decisions, not data-gathering.",
     icon: Zap,
   },
   {
-    title: "Increase confidence in decisions",
+    title: "Every recommendation you make is defensible",
     description:
-      "Back your recommendations with defensible intelligence and clear signal lineage.",
+      "You walk into reviews with intelligence backed by traceable evidence — not gut feel and fragmented notes.",
     icon: Shield,
   },
   {
-    title: "Track everything in one place",
+    title: "Nothing important falls through the cracks",
     description:
-      "Competitors, policy, and category movement synthesized into a single view.",
+      "Competitors, policy changes, and category movement are tracked in a single, unified view your whole team can access.",
     icon: Target,
   },
   {
-    title: "Understand context and lineage",
+    title: "You understand the 'why', not just the 'what'",
     description:
-      "Go beyond 'what' happened to understand 'why' it matters and where it came from.",
+      "Stem goes beyond surfacing changes — it gives you the context and lineage to understand what they mean for your strategy.",
     icon: CheckCircle2,
   },
   {
-    title: "Shorten signal-to-action time",
+    title: "You act while others are still catching up",
     description:
-      "Move from detection to decision faster than the market can react.",
+      "Shorter signal-to-action time means your team moves while the market window is still open — not after it has closed.",
     icon: TrendingUp,
   },
 ];
@@ -51,12 +51,16 @@ export function Benefits() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Your new reality
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
-            Built to help teams move from noise to confident action.
+            Here&apos;s what leading with better intelligence actually looks like.
           </h2>
           <p className="text-xl text-gray-600">
-            Stem transforms how strategy and growth teams interact with the
-            external world.
+            When your team stops reacting and starts anticipating, everything
+            changes — from your confidence in the boardroom to your ability to
+            move faster than the market.
           </p>
         </div>
 

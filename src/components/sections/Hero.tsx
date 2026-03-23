@@ -117,16 +117,21 @@ export function Hero() {
             transition={reduced ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }}
           >
             <span className="shimmer-badge inline-block py-1 px-3 rounded-full bg-blue-50 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
-              Decision Intelligence for Fast-Moving Markets
+              Decision Intelligence for Nigerian Financial Services
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.1] mb-6">
               Stop making high-stakes decisions{" "}
               <span className="text-primary italic">half-blind.</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-10 max-w-lg leading-relaxed">
-              Stem helps fintech and financial-services teams in Nigeria detect
-              meaningful market changes early and act with more confidence, less
-              guesswork, and less manual research.
+            <p className="text-xl text-gray-600 mb-4 max-w-lg leading-relaxed">
+              Stem gives fintech and financial-services teams in Nigeria the
+              intelligence layer they need — detect competitor moves early,
+              defend every recommendation with traceable evidence, and act
+              before the window closes.
+            </p>
+            <p className="text-base text-gray-500 mb-10 max-w-lg leading-relaxed">
+              Imagine walking into every strategy review fully prepared: no
+              surprises, no gaps, no guesswork.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/request-a-scoping-call">
@@ -147,6 +152,9 @@ export function Hero() {
                 See How It Works
               </Button>
             </div>
+            <p className="text-sm text-gray-400 mt-4">
+              Trusted by strategy and growth leaders across Nigerian financial services
+            </p>
           </motion.div>
 
           {/* Visual */}
@@ -177,54 +185,66 @@ export function Hero() {
                     />
                   ))}
 
-                  {/* Orbit nodes */}
-                  <div className="absolute top-1/4 right-1/4">
+                  {/* Labeled signal-source orbit nodes */}
+                  <div className="absolute top-[14%] right-[18%]">
                     <motion.div
-                      className="w-4 h-4 bg-primary rounded-full"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-primary/20 rounded-full shadow-sm text-[10px] font-semibold text-primary whitespace-nowrap"
                       animate={
                         reduced
                           ? { scale: 1, opacity: 1 }
-                          : { scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }
+                          : { scale: [1, 1.06, 1], opacity: [0.7, 1, 0.7] }
                       }
                       transition={{ duration: 3, repeat: Infinity }}
-                    />
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+                      Competitors
+                    </motion.div>
                   </div>
-                  <div className="absolute bottom-1/3 left-[20%]">
+                  <div className="absolute bottom-[22%] left-[10%]">
                     <motion.div
-                      className="w-3 h-3 bg-primary rounded-full"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-amber-300/60 rounded-full shadow-sm text-[10px] font-semibold text-amber-600 whitespace-nowrap"
                       animate={
                         reduced
                           ? { scale: 1, opacity: 1 }
-                          : { scale: [1, 1.3, 1], opacity: [0.4, 1, 0.4] }
+                          : { scale: [1, 1.06, 1], opacity: [0.6, 1, 0.6] }
                       }
                       transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                    />
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
+                      Policy
+                    </motion.div>
                   </div>
-                  <div className="absolute top-1/3 left-1/4">
+                  <div className="absolute top-[32%] left-[12%]">
                     <motion.div
-                      className="w-2 h-2 bg-blue-300 rounded-full"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-indigo-200 rounded-full shadow-sm text-[10px] font-semibold text-indigo-600 whitespace-nowrap"
                       animate={
                         reduced
                           ? { scale: 1, opacity: 1 }
-                          : { scale: [1, 1.4, 1], opacity: [0.3, 0.8, 0.3] }
+                          : { scale: [1, 1.06, 1], opacity: [0.5, 1, 0.5] }
                       }
                       transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
-                    />
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 inline-block" />
+                      Markets
+                    </motion.div>
                   </div>
-                  <div className="absolute bottom-1/4 right-1/5">
+                  <div className="absolute bottom-[14%] right-[16%]">
                     <motion.div
-                      className="w-3 h-3 bg-blue-400 rounded-full"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-rose-200 rounded-full shadow-sm text-[10px] font-semibold text-rose-600 whitespace-nowrap"
                       animate={
                         reduced
                           ? { scale: 1, opacity: 1 }
-                          : { scale: [1, 1.2, 1], opacity: [0.4, 0.9, 0.4] }
+                          : { scale: [1, 1.06, 1], opacity: [0.6, 1, 0.6] }
                       }
                       transition={{ duration: 5, repeat: Infinity, delay: 2 }}
-                    />
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-400 inline-block" />
+                      Regulations
+                    </motion.div>
                   </div>
 
-                  {/* Central Core */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                  {/* Central Core — Intelligence */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-2">
                     <motion.div
                       animate={
                         reduced
@@ -236,6 +256,9 @@ export function Hero() {
                     >
                       <div className="w-4 h-4 bg-white rounded-sm" />
                     </motion.div>
+                    <span className="text-[9px] font-bold text-primary uppercase tracking-widest opacity-80">
+                      Intelligence
+                    </span>
                   </div>
                 </div>
               </div>

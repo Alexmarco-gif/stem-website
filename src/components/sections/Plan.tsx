@@ -2,26 +2,29 @@
 
 import { motion, useInView } from "framer-motion";
 import React from "react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const steps = [
   {
     number: "01",
-    title: "Connect your sources",
+    title: "Tell us what to watch",
     description:
-      "Start with the signals, markets, entities, and monitoring priorities that matter most to your team.",
+      "You start by defining the signals, markets, entities, and monitoring priorities that matter most to your team. No complex setup — just your strategic focus areas.",
   },
   {
     number: "02",
-    title: "Detect meaningful signals",
+    title: "Stem filters signal from noise",
     description:
-      "Stem filters noise, tracks change, and surfaces what deserves attention.",
+      "The platform continuously monitors across sources, detects meaningful changes, and surfaces only what deserves your attention — not another data dump.",
   },
   {
     number: "03",
-    title: "Act with defensible intelligence",
+    title: "You act from a position of strength",
     description:
-      "Use prioritized, contextualized outputs to make faster recommendations and decisions.",
+      "You receive prioritised, contextualised intelligence you can act on immediately — and defend with clear reasoning when it matters most.",
   },
 ];
 
@@ -34,12 +37,15 @@ export function Plan() {
     <section className="py-24 bg-ink text-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mb-16">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Your clear path forward
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            A simple path from fragmented inputs to better decisions.
+            Three steps from fragmented inputs to confident decisions.
           </h2>
           <p className="text-xl text-gray-400">
             Adopting decision intelligence should not be a multi-month
-            integration.
+            integration — or another tool that creates more work than it removes.
           </p>
         </div>
 
@@ -90,6 +96,28 @@ export function Plan() {
             </motion.div>
           ))}
         </div>
+
+        {/* Inline CTA */}
+        <motion.div
+          initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          whileInView={reduced ? {} : { opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={reduced ? { duration: 0 } : { duration: 0.6, delay: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-gray-400 text-lg mb-6">
+            Ready to get started? Most teams are up and running within a week.
+          </p>
+          <Link href="/request-a-scoping-call">
+            <Button
+              size="lg"
+              className="rounded-full shadow-xl shadow-primary/30 group"
+            >
+              Book Your Scoping Call
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

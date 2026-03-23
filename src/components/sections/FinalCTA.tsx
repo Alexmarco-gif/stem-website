@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -61,6 +61,26 @@ export function FinalCTA() {
                 See How It Works
               </Button>
             </div>
+          </motion.div>
+
+          {/* Transitional CTA — free value for not-yet-ready visitors */}
+          <motion.div
+            initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={reduced ? {} : { opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={reduced ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
+            className="mt-10 flex flex-col items-center gap-4"
+          >
+            <p className="text-gray-500 text-sm">
+              Not ready for a call yet?
+            </p>
+            <Link href="/insights">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 bg-white text-sm font-semibold text-ink hover:border-primary/30 hover:shadow-md hover:text-primary transition-all duration-200 group">
+                <FileText className="w-4 h-4 text-primary flex-shrink-0" />
+                Explore our intelligence insights — free
+                <ArrowRight className="w-4 h-4 text-primary transition-transform group-hover:translate-x-1" />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>

@@ -48,14 +48,31 @@ export function Stakes() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
-            The cost of a blind spot is rarely visible until it is expensive.
-          </h2>
-          <p className="text-xl text-gray-600">
-            In fast-moving financial markets, missed signals do not stay small
-            for long. Delayed visibility can turn into weak recommendations,
-            poor timing, missed opportunities, or preventable exposure.
-          </p>
+          <motion.div
+            initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={reduced ? {} : { opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={reduced ? { duration: 0 } : { duration: 0.6 }}
+          >
+            {/* Internal problem — how it feels */}
+            <p className="text-base font-semibold text-primary uppercase tracking-wider mb-4">
+              The real problem
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
+              The cost of a blind spot is rarely visible until it is expensive.
+            </h2>
+            <p className="text-xl text-gray-600 mb-4">
+              You weren&apos;t hired to guess. But when market intelligence is
+              fragmented across dozens of sources — and the manual effort to
+              synthesise it grows every month — every recommendation you make
+              carries more risk than it should.
+            </p>
+            <p className="text-xl text-gray-600">
+              That gap between what you know and what you&apos;d need to know to
+              be fully confident? Right now, your competitors may be exploiting
+              it.
+            </p>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -108,6 +125,22 @@ export function Stakes() {
             );
           })}
         </div>
+
+        {/* Philosophical problem — the closing conviction */}
+        <motion.div
+          initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          whileInView={reduced ? {} : { opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={reduced ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
+          className="mt-16 p-10 rounded-3xl bg-ink text-white text-center max-w-3xl mx-auto"
+        >
+          <p className="text-2xl md:text-3xl font-bold leading-snug">
+            Strategy leaders shouldn&apos;t have to fight for better intelligence.
+          </p>
+          <p className="text-gray-400 text-lg mt-4">
+            But right now, many of them are — and the market rewards the ones who stop.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
