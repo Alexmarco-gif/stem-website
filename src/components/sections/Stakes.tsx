@@ -1,52 +1,56 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { AlertCircle, TrendingDown, ShieldAlert, ZapOff } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { slideInLeft, slideInRight, noMotion } from "@/lib/animation-variants";
+import { accentColors, type AccentKey } from "@/lib/accent-colors";
 
-const stakes = [
+const stakes: { title: string; description: string; icon: React.ElementType; accent: AccentKey }[] = [
   {
     title: "Missed competitor moves",
     description:
       "Launches and pricing shifts often become visible only after they have already captured market attention.",
     icon: TrendingDown,
-    color: "text-blue-500",
-    bg: "bg-blue-50",
+    accent: "primary",
   },
   {
     title: "Delayed expansion timing",
     description:
       "Moving too early or too late due to a lack of clear market entry signals can be a multi-million dollar mistake.",
     icon: ZapOff,
-    color: "text-amber-500",
-    bg: "bg-amber-50",
+    accent: "gold",
   },
   {
     title: "Weakly defended recommendations",
     description:
       "Internal strategy needs more than 'gut feel' to move forward with confidence and leadership buy-in.",
     icon: ShieldAlert,
-    color: "text-indigo-500",
-    bg: "bg-indigo-50",
+    accent: "teal",
   },
   {
     title: "Policy or regulatory surprise",
     description:
       "Regulatory changes can impact operations overnight if signals aren't detected and interpreted early.",
     icon: AlertCircle,
-    color: "text-rose-500",
-    bg: "bg-rose-50",
+    accent: "rose",
   },
 ];
 
 export function Stakes() {
   const reduced = useReducedMotion();
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-28 bg-white relative overflow-hidden">
+      {/* Subtle top gradient */}
+      <div
+        className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, rgba(240,242,248,0.5), transparent)" }}
+      />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mb-16">
           <motion.div
             initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -54,20 +58,21 @@ export function Stakes() {
             viewport={{ once: true }}
             transition={reduced ? { duration: 0 } : { duration: 0.6 }}
           >
-            {/* Internal problem — how it feels */}
-            <p className="text-base font-semibold text-primary uppercase tracking-wider mb-4">
+            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 bg-red-50 border border-red-100 text-red-500">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-400 inline-block" />
               The real problem
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
-              The cost of a blind spot is rarely visible until it is expensive.
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6 leading-tight">
+              The cost of a blind spot is rarely visible{" "}
+              <span className="text-gradient-blue">until it is expensive.</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-4">
+            <p className="text-xl text-gray-500 mb-4">
               You weren&apos;t hired to guess. But when market intelligence is
               fragmented across dozens of sources — and the manual effort to
               synthesise it grows every month — every recommendation you make
               carries more risk than it should.
             </p>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-500">
               That gap between what you know and what you&apos;d need to know to
               be fully confident? Right now, your competitors may be exploiting
               it.
@@ -75,9 +80,10 @@ export function Stakes() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stakes.map((stake, i) => {
-            // Alternate left/right slide-in
+            const ac = accentColors[stake.accent];
+            const isHovered = hoveredIndex === i;
             const variant = reduced
               ? noMotion
               : i % 2 === 0
@@ -94,13 +100,20 @@ export function Stakes() {
                 transition={
                   reduced ? { duration: 0 } : { duration: 0.5, delay: i * 0.1 }
                 }
-                className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                onHoverStart={() => !reduced && setHoveredIndex(i)}
+                onHoverEnd={() => setHoveredIndex(null)}
+                whileHover={reduced ? {} : { y: -4, transition: { duration: 0.25 } }}
+                className="group p-8 rounded-2xl bg-white cursor-default transition-all duration-300"
+                style={{
+                  border: `1px solid ${isHovered ? ac.border.replace("0.25", "0.45") : ac.border}`,
+                  boxShadow: isHovered
+                    ? `0 20px 40px rgba(0,0,0,0.08), 0 0 24px ${ac.glow}`
+                    : "0 2px 8px rgba(0,0,0,0.04)",
+                }}
               >
                 <div
-                  className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110",
-                    stake.bg
-                  )}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+                  style={{ background: ac.fill, border: `1px solid ${ac.border}` }}
                 >
                   <motion.div
                     whileHover={
@@ -112,13 +125,13 @@ export function Stakes() {
                           }
                     }
                   >
-                    <stake.icon className={cn("w-6 h-6", stake.color)} />
+                    <stake.icon className="w-6 h-6" style={{ color: ac.color }} />
                   </motion.div>
                 </div>
-                <h3 className="text-xl font-bold text-ink mb-3">
+                <h3 className="text-lg font-bold text-ink mb-3 leading-snug">
                   {stake.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed text-sm">
                   {stake.description}
                 </p>
               </motion.div>
@@ -126,20 +139,30 @@ export function Stakes() {
           })}
         </div>
 
-        {/* Philosophical problem — the closing conviction */}
+        {/* Philosophical problem — dark callout */}
         <motion.div
           initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           whileInView={reduced ? {} : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={reduced ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
-          className="mt-16 p-10 rounded-3xl bg-ink text-white text-center max-w-3xl mx-auto"
+          className="mt-16 p-10 rounded-3xl text-white text-center max-w-3xl mx-auto relative overflow-hidden"
+          style={{ background: "var(--surface-dark)" }}
         >
-          <p className="text-2xl md:text-3xl font-bold leading-snug">
-            Strategy leaders shouldn&apos;t have to fight for better intelligence.
-          </p>
-          <p className="text-gray-400 text-lg mt-4">
-            But right now, many of them are — and the market rewards the ones who stop.
-          </p>
+          <div
+            className="absolute inset-0 rounded-3xl pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse at 50% 50%, rgba(77,124,255,0.15) 0%, transparent 60%)",
+            }}
+          />
+          <div className="relative z-10">
+            <p className="text-2xl md:text-3xl font-bold leading-snug text-white">
+              Strategy leaders shouldn&apos;t have to fight for{" "}
+              <span className="text-gradient-blue">better intelligence.</span>
+            </p>
+            <p className="text-white/50 text-lg mt-4">
+              But right now, many of them are — and the market rewards the ones who stop.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
